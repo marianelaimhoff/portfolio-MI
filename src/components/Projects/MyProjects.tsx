@@ -21,7 +21,7 @@ export function ProjectsSection() {
           return (
             <article
               key={project.id}
-              className="group bg-white rounded-2xl shadow-md overflow-hidden"
+              className="group bg-white rounded-2xl shadow-md relative"
             >
               {/* Imagen */}
               <div className="relative h-80 w-full overflow-hidden">
