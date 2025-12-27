@@ -17,24 +17,27 @@ const logos = [
   "/logos/auth0.png",
   "/logos/html.png",
   "/logos/css.png",
-  "/logos/stripe.png"
+  "/logos/stripe.png",
 ];
 
 export default function TechGrid() {
   return (
-    <div className="w-full py-8">
-      <div className="mx-auto grid grid-cols-5 gap-4 place-items-center max-w-3xl">
-        {logos.map((logo, index) => (
-          <Image
-            key={index}
-            src={logo}
-            alt="Technology logo"
-            width={55}
-            height={55}
-            className="opacity-90 hover:opacity-100 transition"
-          />
-        ))}
+    <section className="w-full py-10 px-6">
+      {/* contenedor centrado */}
+      <div className="mx-auto max-w-3xl">
+        <div className="grid grid-cols-5 gap-4 place-items-center">
+          {logos.map((logo, index) => (
+            <Image
+              key={index}
+              src={logo}
+              alt="Technology logo"
+              width={55}
+              height={55}
+              className="opacity-90 hover:opacity-100 transition"
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

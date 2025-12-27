@@ -14,14 +14,14 @@ export function Home() {
           src="/marianela-portfolio.png"
           alt="imagen marianela"
           fill
-          className="object-cover"
           priority
+          className="object-cover object-center sm:object-[center_top]"
         />
 
         {/* Texto sobre la imagen */}
         <div
-          className="absolute inset-0 flex flex-col text-white px-6
-            pt-40 sm:pt-52 md:pt-0 md:px-20 md:justify-center md:items-start md:text-left"
+          className="absolute inset-0 flex flex-col text-white px-6 justify-end pb-16
+            md:justify-center md:pb-0 md:px-20"
         >
           <p className="text-lg md:text-xl font-light mb-2">Hola! Soy</p>
           <h1 className="text-4xl md:text-6xl font-bold mb-2">Marianela</h1>
