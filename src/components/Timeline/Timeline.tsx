@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { experiences } from "./experiences";
 export default function Timeline() {
   return (
-    <div className="relative max-w-3xl mx-auto p-1 py-10">
+    <div className="relative max-w-3xl mx-auto p-1 py-5">
       {/* -LINEA DE TIEMPO- */}
       <div className="absolute left-4 top-0 w-1 bg-gray-200 h-full rounded-full" />
 

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function AboutMe() {
   return (
-    <section className="w-full max-w-5xl mx-auto py-20 px-4">
+    <section className="w-full max-w-5xl mx-auto py-5 px-4">
       {/* CONTENEDOR PRINCIPAL */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* BLOQUE FOTO + MARCO ANIMADO */}
