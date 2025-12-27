@@ -5,7 +5,7 @@ import Link from "next/link";
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const links = ["Inicio", "Acerca de Mi", "Experiencia", "Proyectos", "Contacto"];
+  const links = ["Inicio", "Sobre mi", "Experiencia", "Proyectos", "Contacto"];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">

@@ -1,12 +1,18 @@
+"use client";
 import Image from "next/image";
+import Timeline from "../Timeline/Timeline";
+import { ProjectsSection } from "../Projects/MyProjects";
+import AboutMe from "../AboutMe/AboutMe";
+import TechStack from "../TechStack/TechStack";
 
-function Home() {
+
+export function Home() {
   return (
-    <div className="relative w-full bg-[#B4C9C9]">
+    <div className="relative w-full bg-[#FF7220]">
       <section id="inicio" className="relative h-screen">
         {/* Imagen de fondo */}
         <Image
-          src="/marian.png"
+          src="/marianela-portfolio.png"
           alt="imagen marianela"
           fill
           className="object-cover"
@@ -25,24 +31,32 @@ function Home() {
           <h1 className="text-4xl md:text-6xl font-bold mb-2">Marianela</h1>
           <h1 className="text-4xl md:text-6xl font-bold mb-2">Imhoff</h1>
           <h2 className="text-xl md:text-2xl font-medium">
-            Bienvenido/a a mi portfolio :)
+            Desarrolladora Frontend
           </h2>
         </div>
       </section>
 
-      <section id="acerca-de-mi" className="bg-[#B4C9C9]">
-        <h2 className="text-center text-4xl p-6 text-white md:text-4xl font-semibold mb-2">Acerca de Mi</h2>
+      <section id="acerca-de-mi" className="bg-[#CCCCCC]">
+        <h2 className="text-center text-4xl p-6 text-white md:text-4xl font-semibold mb-2">Sobre mi</h2>
+        <AboutMe />
+        </section>
+
+      <section id="experiencia" className="bg-[#CCCCCC]">
+        <h2 className="text-center text-4xl p-6 text-white md:text-4xl font-semibold mb-2">Experiencia profesional</h2>
+        <Timeline />
       </section>
 
-      <section id="experiencia" className="bg-[#B4C9C9]">
-        <h2 className="text-center text-4xl p-6 text-white md:text-4xl font-semibold mb-2">Mi Experiencia</h2>
-      </section>
-
-      <section id="proyectos" className="bg-[#B4C9C9]">
+      <section id="proyectos" className="bg-[#CCCCCC]">
         <h2 className="text-center text-4xl p-6 text-white md:text-4xl font-semibold mb-2">Mis Proyectos</h2>
+        <ProjectsSection/>
       </section>
 
-      <section id="contacto" className="bg-[#B4C9C9]">
+      <section id="tecnologias" className="bg-[#CCCCCC]">
+        <h2 className="text-center text-4xl p-6 text-white md:text-4xl font-semibold mb-2">Tecnologías</h2>
+        <TechStack />
+      </section>
+
+      <section id="contacto" className="bg-[#CCCCCC]">
         <h2 className="text-center text-4xl p-6 text-white md:text-4xl font-semibold mb-2">Contactame!</h2>
       </section>
     </div>

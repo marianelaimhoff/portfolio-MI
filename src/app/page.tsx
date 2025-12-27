@@ -1,8 +1,10 @@
-import Home from "@/components/Home/Home"
-function HomePortfolio() {
+import Home from "@/components/Home/Home";
+function Portfolio() {
   return (
-    <Home />
-  )
+    <div>
+      <Home />
+    </div>
+  );
 }
 
-export default HomePortfolio
+export default Portfolio;
