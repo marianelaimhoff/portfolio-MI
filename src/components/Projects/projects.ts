@@ -3,12 +3,12 @@ export const projects = [
     id: 1,
     title: "Vitta - Plataforma para nutricionistas",
     description:
-      "Dashboard para admins con gestión de usuarios, roles y habilitaciones.",
+      "Plataforma digital que conecta nutricionistas y pacientes, facilitando la gestión de turnos mediante membresías.",
     duration: "2 meses",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Express", "PostgreSQL"],
-    image: "/marianela-portfolio.png",
-    github: "https://github.com/tu-usuario/dashboard",
-    demo: "https://dashboard-demo.com",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Auth0", "Stripe"],
+    image: "/vitta-home.png",
+    github: "https://github.com/pfvitta/vittaFront",
+    demo: "http://pf-vitta.vercel.app",
   }, 
   {
     id: 2,

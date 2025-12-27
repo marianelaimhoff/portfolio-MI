@@ -4,19 +4,21 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 const logos = [
-  "/logos/react.svg",
-  "/logos/nextjs.svg",
-  "/logos/typescript.svg",
-  "/logos/javascript.svg",
-  "/logos/tailwind.svg",
-  "/logos/bootstrap.svg",
-  "/logos/express.svg",
-  "/logos/postgresql.svg",
-  "/logos/git.svg",
-  "/logos/scrum.svg",
-  "/logos/figma.svg",
-  "/logos/axios.svg",
-  "/logos/auth0.svg",
+  "/logos/react.png",
+  "/logos/nextjs.png",
+  "/logos/typescript.png",
+  "/logos/javascript.png",
+  "/logos/tailwindcss.png",
+  "/logos/bootstrap.png",
+  "/logos/express.png",
+  "/logos/postgresql.png",
+  "/logos/github.png",
+  "/logos/figma.png",
+  "/logos/axios.png",
+  "/logos/auth0.png",
+  "/logos/html.png",
+  "/logos/css.png",
+  
 ];
 
 export default function TechCarousel() {

@@ -17,12 +17,12 @@ export default function AboutMe() {
           <motion.div
             animate={{ rotate: [0, 2, -2, 0] }}
             transition={{ repeat: Infinity, duration: 8 }}
-            className="absolute inset-0 border-4 border-gray-500 rounded-3xl"
+            className="absolute inset-0 border-4 border-[#FF7220] rounded-3xl"
           />
 
           {/* Foto */}
           <Image
-            src="/marianela-portfolio.png" // Cambiar por tu imagen
+            src="/marianela-portfolio.png" 
             alt="Foto personal"
             fill
             className="object-cover rounded-3xl shadow-xl"
@@ -40,7 +40,7 @@ export default function AboutMe() {
           {/* Caja con fondo degradado suave */}
           <div className="p-6 bg-gradient-to-br from-indigo-50 to-white rounded-2xl shadow">
             <p className="text-gray-700 leading-relaxed text-lg">
-              Soy desarrolladora <span className="font-semibold text-indigo-600">Full Stack especializada en Front End</span>. Me apasiona crear interfaces modernas y funcionales, cuidando cada detalle para lograr una experiencia atractiva y fácil de usar.
+              Soy desarrolladora <span className="font-semibold text-[#FF7220]">Full Stack especializada en Front End</span>. Me apasiona crear interfaces modernas y funcionales, cuidando cada detalle para lograr una experiencia atractiva y fácil de usar.
             </p>
             <p className="text-gray-700 leading-relaxed text-lg mt-4">
               Me considero una persona detallista, autoexigente, creativa y responsable. Disfruto del proceso de diseñar y desarrollar componentes reutilizables, mantener un código limpio y construir soluciones que combinen estética y funcionalidad.

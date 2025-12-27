@@ -9,7 +9,7 @@ export function ProjectsSection() {
         {projects.map((project) => (
           <article
             key={project.id}
-            className="group bg-white rounded-2xl shadow-md border overflow-hidden relative"
+            className="group bg-white rounded-2xl shadow-md overflow-hidden relative"
           >
             {/* Imagen con overlay */}
             <div className="relative h-80 w-full overflow-hidden">
@@ -24,7 +24,7 @@ export function ProjectsSection() {
               <div
                 className="absolute inset-0 bg-white/95 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-7 flex flex-col gap-5 md:pointer-events-none md:group-hover:pointer-events-auto md:group-hover:translate-y-0 md:translate-y-full"
               >
-                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <h3 className="text-xl font-semibold text-[#5e5e5e]">{project.title}</h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
                   {project.description}
                 </p>
@@ -48,14 +48,14 @@ export function ProjectsSection() {
                   <a
                     href={project.github}
                     target="_blank"
-                    className="flex items-center gap-1 text-sm font-medium hover:underline"
+                    className="flex items-center gap-1 text-sm text-[#FF7220] font-medium hover:underline"
                   >
                     <Github size={16} /> Código
                   </a>
                   <a
                     href={project.demo}
                     target="_blank"
-                    className="flex items-center gap-1 text-sm font-medium hover:underline"
+                    className="flex items-center gap-1 text-sm text-[#FF7220] font-medium hover:underline"
                   >
                     <ExternalLink size={16} /> Demo
                   </a>
