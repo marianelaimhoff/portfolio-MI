@@ -1,61 +1,113 @@
-"use client"
-import { useState } from "react";
-import Link from "next/link";
+"use client";
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+import { useState, useEffect } from "react";
 
-  const links = ["Inicio", "Sobre mi", "Experiencia", "Proyectos", "Contacto"];
+const NAV_LINKS = [
+  { label: "Inicio", href: "#hero" },
+  { label: "Sobre mí", href: "#sobre-mi" },
+  { label: "Tecnologías", href: "#tech" },
+  { label: "Experiencia", href: "#experiencia" },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Contacto", href: "#contacto" },
+];
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo vacío para mantener centrado */}
-        <div className="hidden md:block"></div>
+    <header
+      className={`
+        sticky top-0 z-50 flex items-center justify-between
+        h-16 px-6 md:px-10
+        border-b border-[#2a2a2a]
+        transition-all duration-300
+        ${scrolled ? "bg-[#0a0a0a]/95 backdrop-blur-md" : "bg-[#0a0a0a]"}
+      `}
+    >
+      {/* Logo */}
+      <a
+        href="#hero"
+        onClick={(e) => scrollTo(e, "#hero")}
+        className="font-mono-custom text-[13px] tracking-widest text-[#666] no-underline flex items-center gap-1"
+      >
+        <span className="text-accent">MI</span>
+        <span className="text-[#444]">/</span>
+        portfolio
+      </a>
 
-        {/* Links centrados */}
-        <div className="flex-1 flex justify-center">
-          <div
-            className={`flex items-center gap-8 md:flex ${
-              isOpen
-                ? "flex-col absolute top-full left-0 w-full bg-black/70 p-6 md:bg-transparent md:p-0 md:flex-row md:static"
-                : "hidden md:flex"
-            }`}
-          >
-            {links.map((item) => (
-              <Link
-                key={item}
-                href={`/${item.toLowerCase().replace(" ", "")}`}
-                className="relative text-white text-lg font-semibold transition-colors
-                  after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-white after:transition-all hover:after:w-full"
-                onClick={() => setIsOpen(false)} // cierra menú en móvil al hacer click
-              >
-                {item}
-              </Link>
-            ))}
-          </div>
+      {/* Desktop links */}
+      <ul className="hidden md:flex items-center gap-8 list-none">
+        {NAV_LINKS.map(({ label, href }) => (
+          <li key={href}>
+            <a
+              href={href}
+              onClick={(e) => scrollTo(e, href)}
+              className="font-mono-custom text-[11px] tracking-[0.12em] uppercase text-[#666] no-underline hover:text-[#f0ece4] transition-colors duration-200"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {/* CTA desktop */}
+      <a
+        href="#contacto"
+        onClick={(e) => scrollTo(e, "#contacto")}
+        className="hidden md:inline-block font-mono-custom text-[11px] tracking-widest uppercase px-5 py-2 border border-accent text-accent no-underline hover:bg-accent hover:text-[#0a0a0a] transition-all duration-200"
+      >
+        Contacto
+      </a>
+
+      {/* Hamburger mobile */}
+      <button
+        className="md:hidden flex flex-col gap-[5px] bg-transparent border-none cursor-pointer p-1"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Menú"
+      >
+        <span
+          className={`block w-[22px] h-px bg-[#aaa] transition-transform duration-200 ${menuOpen ? "translate-y-1.5 rotate-45" : ""}`}
+        />
+        <span
+          className={`block w-[22px] h-px bg-[#aaa] transition-opacity duration-200 ${menuOpen ? "opacity-0" : ""}`}
+        />
+        <span
+          className={`block w-[22px] h-px bg-[#aaa] transition-transform duration-200 ${menuOpen ? "-translate-y-1.5 -rotate-45" : ""}`}
+        />
+      </button>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="absolute top-16 left-0 right-0 bg-[#0a0a0a] border-b border-[#2a2a2a] flex flex-col gap-5 px-6 py-6 md:hidden">
+          {NAV_LINKS.map(({ label, href }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={(e) => scrollTo(e, href)}
+              className="font-mono-custom text-[13px] tracking-widest uppercase text-[#aaa] no-underline hover:text-accent transition-colors"
+            >
+              {label}
+            </a>
+          ))}
         </div>
-
-        {/* Botón hamburguesa */}
-        <button
-          className="md:hidden text-white focus:outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-            />
-          </svg>
-        </button>
-      </div>
-    </nav>
+      )}
+    </header>
   );
 }

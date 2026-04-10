@@ -1,53 +1,79 @@
-import { motion } from "framer-motion";
-import Image from "next/image";
+const STACK = [
+  { name: "Next.js", highlight: true },
+  { name: "TypeScript", highlight: true },
+  { name: "React", highlight: true },
+  { name: "Tailwind CSS", highlight: true },
+  { name: "Express", highlight: false },
+  { name: "PostgreSQL", highlight: false },
+  { name: "Figma", highlight: false },
+  { name: "Vercel", highlight: false },
+  { name: "Auth0", highlight: false },
+  { name: "Stripe", highlight: false },
+  { name: "GitHub", highlight: false },
+];
 
 export default function AboutMe() {
   return (
-    <section className="w-full max-w-5xl mx-auto py-5 px-4">
-      {/* CONTENEDOR PRINCIPAL */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* BLOQUE FOTO + MARCO ANIMADO */}
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative w-full h-72 md:h-96"
-        >
-          {/* Marco animado */}
-          <motion.div
-            animate={{ rotate: [0, 2, -2, 0] }}
-            transition={{ repeat: Infinity, duration: 8 }}
-            className="absolute inset-0 border-4 border-[#FF7220] rounded-3xl"
-          />
+    <section
+      id="sobre-mi"
+      className="grid grid-cols-1 md:grid-cols-[1fr_2fr] border-b border-[#2a2a2a]"
+    >
+      {/* ── LEFT ── */}
+      <div className="flex flex-col gap-8 px-6 md:px-10 py-14 border-b md:border-b-0 md:border-r border-[#2a2a2a]">
+        <span className="font-mono-custom text-[10px] tracking-[0.25em] uppercase text-accent">
+          {"//"} 01 — sobre mí
+        </span>
 
-          {/* Foto */}
-          <Image
-            src="/marianela-portfolio.png" 
-            alt="Foto personal"
-            fill
-            className="object-cover rounded-3xl shadow-xl"
-          />
-        </motion.div>
+        <blockquote className="mt-auto font-mono-custom text-[13px] italic text-[#666] leading-[1.7] border-l-2 border-accent pl-4">
+          &quot;Construyo interfaces que la gente disfruta usar.&quot;
+        </blockquote>
 
-        {/* TEXTO CON DISEÑO DESTACADO */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col gap-6"
-        >
+        <div className="pt-6 border-t border-[#2a2a2a] flex flex-col gap-1 font-mono-custom text-[11px] tracking-widest uppercase text-[#444] leading-loose">
+          <p>Basada en Argentina</p>
+          <p>Disponible para trabajo remoto</p>
+          <p>Open to relocation</p>
+        </div>
+      </div>
 
-          {/* Caja con fondo degradado suave */}
-          <div className="p-6 bg-gradient-to-br from-indigo-50 to-white rounded-2xl shadow">
-            <p className="text-gray-700 leading-relaxed text-lg">
-              Soy desarrolladora <span className="font-semibold text-[#FF7220]">Full Stack especializada en Front End</span>. Me apasiona crear interfaces modernas y funcionales, cuidando cada detalle para lograr una experiencia atractiva y fácil de usar.
-            </p>
-            <p className="text-gray-700 leading-relaxed text-lg mt-4">
-              Me considero una persona detallista, autoexigente, creativa y responsable. Disfruto del proceso de diseñar y desarrollar componentes reutilizables, mantener un código limpio y construir soluciones que combinen estética y funcionalidad.
-            </p>
+      {/* ── RIGHT ── */}
+      <div className="flex flex-col gap-8 px-6 md:px-12 py-14">
+        <p className="text-[16px] leading-[1.8] text-[#aaa]">
+          Soy desarrolladora Frontend especializada en construir{" "}
+          <strong className="text-[#f0ece4] font-medium">
+            productos digitales con criterio de diseño
+          </strong>
+          . Me importa tanto el código limpio como la experiencia visual: cada
+          componente es una decisión estética y técnica a la vez.
+          <br />
+          <br />
+          Trabajo con{" "}
+          <strong className="text-[#f0ece4] font-medium">
+            Next.js, TypeScript y Tailwind CSS
+          </strong>
+          . Colaboro con equipos de diseño en Figma y entiendo el frontend como
+          el puente entre una buena idea y una experiencia real.
+        </p>
+
+        <div>
+          <p className="font-mono-custom text-[10px] tracking-[0.15em] uppercase text-[#444] mb-3">
+            Stack principal
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {STACK.map(({ name, highlight }) => (
+              <span
+                key={name}
+                className={`font-mono-custom text-[10px] tracking-widest uppercase px-3 py-[5px] border text-sm
+                  ${
+                    highlight
+                      ? "border-accent text-accent"
+                      : "border-[#2a2a2a] text-[#666]"
+                  }`}
+              >
+                {name}
+              </span>
+            ))}
           </div>
-
-        </motion.div>
+        </div>
       </div>
     </section>
   );
