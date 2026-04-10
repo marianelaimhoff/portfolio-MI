@@ -1,0 +1,17 @@
+export const TECHS = [
+  { name: "React", logo: "/logos/react.png" },
+  { name: "Next.js", logo: "/logos/nextjs.png" },
+  { name: "TypeScript", logo: "/logos/typescript.png" },
+  { name: "JavaScript", logo: "/logos/javascript.png" },
+  { name: "Tailwind", logo: "/logos/tailwindcss.png" },
+  { name: "Bootstrap", logo: "/logos/bootstrap.png" },
+  { name: "Express", logo: "/logos/express.png" },
+  { name: "PostgreSQL", logo: "/logos/postgresql.png" },
+  { name: "GitHub", logo: "/logos/github.png" },
+  { name: "Figma", logo: "/logos/figma.png" },
+  { name: "Axios", logo: "/logos/axios.png" },
+  { name: "Auth0", logo: "/logos/auth0.png" },
+  { name: "HTML", logo: "/logos/html.png" },
+  { name: "CSS", logo: "/logos/css.png" },
+  { name: "Stripe", logo: "/logos/stripe.png" },
+];

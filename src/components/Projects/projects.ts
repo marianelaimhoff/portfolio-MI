@@ -1,36 +1,35 @@
-export const projects = [
+export const PROJECTS = [
   {
-    id: 1,
-    title: "Vitta - Plataforma para nutricionistas",
+    num: "01",
+    title: "Vitta — Plataforma para nutricionistas",
     description:
       "Plataforma digital que conecta nutricionistas y pacientes, facilitando la gestión de turnos mediante membresías.",
     duration: "2 meses",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Auth0", "Stripe"],
-    image: "/vitta-home.png",
-    github: "https://github.com/pfvitta/vittaFront",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Auth0", "Stripe"],
     demo: "http://pf-vitta.vercel.app",
-  }, 
+    code: "https://github.com/pfvitta/vittaFront",
+    image: "/vitta-home.png",
+  },
   {
-    id: 2,
-    title: "Drop Case - E-commerce de fundas",
+    num: "02",
+    title: "Drop Case — E-commerce de fundas",
     description:
       "Tienda online completa con carrito, pasarela de pago y panel de usuario.",
     duration: "6 semanas",
-    tech: ["React", "Next.js", "TypeScript", "Tailwind", "Zustand", "Node.js"],
-    image: "/images/projects/ecommerce.png", // reemplazar cuando tengas la imagen
-    github: "https://github.com/tu-usuario/ecommerce",
+    tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Node.js"],
     demo: "https://ecommerce-demo.com",
+    code: "https://github.com/tu-usuario/ecommerce",
+    image: "/images/projects/ecommerce.png",
   },
-  
   {
-    id: 3,
-    title: "Yossen Kinesiología - Gestor de turnos",
+    num: "03",
+    title: "Yossen Kinesiología — Gestor de turnos",
     description:
       "Dashboard para admins con gestión de usuarios, roles y habilitaciones.",
     duration: "6 semanas",
-    tech: ["Next.js", "TypeScript", "Tailwind", "Express", "PostgreSQL"],
-    image: "/images/projects/dashboard.png",
-    github: "https://github.com/tu-usuario/dashboard",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Express", "PostgreSQL"],
     demo: "https://dashboard-demo.com",
+    code: "https://github.com/tu-usuario/dashboard",
+    image: "/images/projects/dashboard.png",
   },
 ];

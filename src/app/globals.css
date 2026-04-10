@@ -1,6 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
 @import "tailwindcss";
 
-html, body {
-  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+@theme {
+  --font-sans: var(--font-space-grotesk), sans-serif;
+  --font-mono-custom: var(--font-space-mono), monospace;
+  --color-accent: #c8f04d;
 }
+
+/* ── BASE ─────────────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0a0a0a;
+  color: #f0ece4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SCROLLBAR ────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: #0a0a0a; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+
+/* ── SELECTION ────────────────────────────────────────── */
+::selection { background: #c8f04d; color: #0a0a0a; }
+
+/* ── FONT HELPERS ─────────────────────────────────────── */
+.font-mono-custom { font-family: 'Space Mono', monospace; }
+
+/* ── ANIMATIONS ───────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.anim-1 { animation: fadeUp 0.6s ease 0.05s both; }
+.anim-2 { animation: fadeUp 0.6s ease 0.15s both; }
+.anim-3 { animation: fadeUp 0.6s ease 0.28s both; }
+.anim-4 { animation: fadeUp 0.6s ease 0.42s both; }
+.anim-5 { animation: fadeUp 0.6s ease 0.56s both; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 22s linear infinite; }
