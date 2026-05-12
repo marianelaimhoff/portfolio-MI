@@ -33,8 +33,8 @@ export default function Contact() {
     >
       {/* ── LEFT ── */}
       <div className="flex flex-col justify-between gap-8 px-6 md:px-10 py-14 border-b md:border-b-0 md:border-r border-[#2a2a2a]">
-        <span className="font-mono-custom text-[10px] tracking-[0.25em] uppercase text-accent">
-          {"//"} 05 — contacto
+        <span className="font-mono-custom text-[12px] tracking-[0.25em] uppercase text-accent">
+          {"//"} 04 — contacto
         </span>
 
         <h2
@@ -49,7 +49,7 @@ export default function Contact() {
           <span className="text-accent">juntos.</span>
         </h2>
 
-        <p className="text-[15px] text-[#666] leading-[1.7] max-w-sm">
+        <p className="text-[15px] text-[#b1b1b1] leading-[1.7] max-w-sm">
           Estoy disponible para proyectos freelance, trabajo remoto y
           oportunidades full-time.
         </p>
@@ -62,7 +62,7 @@ export default function Contact() {
             key={label}
             className="flex flex-col gap-1 py-5 border-b border-[#1e1e1e]"
           >
-            <span className="font-mono-custom text-[10px] tracking-[0.2em] uppercase text-[#444]">
+            <span className="font-mono-custom text-[10px] tracking-[0.2em] uppercase text-[#838383]">
               {label}
             </span>
 

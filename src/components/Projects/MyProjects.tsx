@@ -17,8 +17,8 @@ export default function Projects() {
           <br />
           <span className="text-accent">destacados.</span>
         </h2>
-        <span className="font-mono-custom text-[10px] tracking-[0.25em] uppercase text-accent">
-          {"//"} 04
+        <span className="font-mono-custom text-[12px] tracking-[0.25em] uppercase text-accent">
+          {"//"} 02
         </span>
       </div>
 
@@ -32,7 +32,7 @@ export default function Projects() {
               ${i === 1 ? "md:border-r md:border-[#2a2a2a] lg:border-r" : ""}
             `}
           >
-            <span className="font-mono-custom text-[10px] tracking-[0.15em] text-[#444]">
+            <span className="font-mono-custom text-[10px] tracking-[0.15em] text-[#b1b1b1]">
               {project.num} / 03
             </span>
 
@@ -62,15 +62,15 @@ export default function Projects() {
             <h3 className="text-[16px] font-medium text-[#f0ece4] leading-snug tracking-[-0.01em]">
               {project.title}
             </h3>
-            <p className="text-[13px] text-[#666] leading-[1.65]">
+            <p className="text-[13px] text-[#b1b1b1] leading-[1.65]">
               {project.description}
             </p>
 
             <div className="flex flex-col gap-1">
-              <span className="font-mono-custom text-[9px] tracking-[0.15em] uppercase text-[#444]">
+              <span className="font-mono-custom text-[9px] tracking-[0.15em] uppercase text-[#b1b1b1]">
                 Duración
               </span>
-              <span className="font-mono-custom text-[11px] text-[#555]">
+              <span className="font-mono-custom text-[11px] text-[#b1b1b1]">
                 {project.duration}
               </span>
             </div>
@@ -80,7 +80,7 @@ export default function Projects() {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-mono-custom text-[9px] tracking-widest uppercase px-2 py-1 border border-[#2a2a2a] text-[#555]"
+                  className="font-mono-custom text-[9px] tracking-widest uppercase px-2 py-1 border border-[#2a2a2a] text-[#b1b1b1]"
                 >
                   {tag}
                 </span>
@@ -101,7 +101,7 @@ export default function Projects() {
                 href={project.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono-custom text-[11px] tracking-[0.12em] uppercase text-[#444] no-underline hover:text-[#f0ece4] transition-colors"
+                className="font-mono-custom text-[11px] tracking-[0.12em] uppercase text-[#b1b1b1] no-underline hover:text-[#f0ece4] transition-colors"
               >
                 Código
               </a>

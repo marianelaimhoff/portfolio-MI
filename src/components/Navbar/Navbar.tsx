@@ -5,11 +5,12 @@ import { useState, useEffect } from "react";
 const NAV_LINKS = [
   { label: "Inicio", href: "#hero" },
   { label: "Sobre mí", href: "#sobre-mi" },
-  { label: "Tecnologías", href: "#tech" },
-  { label: "Experiencia", href: "#experiencia" },
   { label: "Proyectos", href: "#proyectos" },
+  { label: "Experiencia", href: "#experiencia" },
   { label: "Contacto", href: "#contacto" },
 ];
+
+const CV_HREF = "/MarianelaImhoff-CV-FrontEnd .pdf";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,10 +46,10 @@ export default function Navbar() {
       <a
         href="#hero"
         onClick={(e) => scrollTo(e, "#hero")}
-        className="font-mono-custom text-[13px] tracking-widest text-[#666] no-underline flex items-center gap-1"
+        className="font-mono-custom text-[13px] tracking-widest text-[#b1b1b1] no-underline flex items-center gap-1"
       >
         <span className="text-accent">MI</span>
-        <span className="text-[#444]">/</span>
+        <span className="text-[#b1b1b1]">/</span>
         portfolio
       </a>
 
@@ -59,7 +60,7 @@ export default function Navbar() {
             <a
               href={href}
               onClick={(e) => scrollTo(e, href)}
-              className="font-mono-custom text-[11px] tracking-[0.12em] uppercase text-[#666] no-underline hover:text-[#f0ece4] transition-colors duration-200"
+              className="font-mono-custom text-[11px] tracking-[0.12em] uppercase text-[#b1b1b1] no-underline hover:text-[#f0ece4] transition-colors duration-200"
             >
               {label}
             </a>
@@ -69,11 +70,11 @@ export default function Navbar() {
 
       {/* CTA desktop */}
       <a
-        href="#contacto"
-        onClick={(e) => scrollTo(e, "#contacto")}
+        href={CV_HREF}
+        download
         className="hidden md:inline-block font-mono-custom text-[11px] tracking-widest uppercase px-5 py-2 border border-accent text-accent no-underline hover:bg-accent hover:text-[#0a0a0a] transition-all duration-200"
       >
-        Contacto
+        Descargar CV
       </a>
 
       {/* Hamburger mobile */}
@@ -101,11 +102,19 @@ export default function Navbar() {
               key={href}
               href={href}
               onClick={(e) => scrollTo(e, href)}
-              className="font-mono-custom text-[13px] tracking-widest uppercase text-[#aaa] no-underline hover:text-accent transition-colors"
+              className="font-mono-custom text-[13px] tracking-widest uppercase text-[#b1b1b1] no-underline hover:text-accent transition-colors"
             >
               {label}
             </a>
           ))}
+          <a
+            href={CV_HREF}
+            download
+            onClick={() => setMenuOpen(false)}
+            className="font-mono-custom text-[13px] tracking-widest uppercase text-accent no-underline transition-colors"
+          >
+            Descargar CV
+          </a>
         </div>
       )}
     </header>

@@ -1,8 +1,8 @@
 const JOBS = [
   {
     company: "Awaq ONG",
-    role: "Frontend Developer (Prácticas)",
-    period: "Sep 2025 — Feb 2026",
+    role: "Frontend Developer",
+    period: "Sep 2025 — Feb 2026 (Prácticas)",
     current: false,
     description:
       "Desarrollo y mantenimiento de interfaces web para una ONG dedicada a la gestión y conservación de estaciones biológicas. Foco en diseño responsivo, accesibilidad y optimización de la experiencia de usuario.",
@@ -11,8 +11,8 @@ const JOBS = [
   },
   {
     company: "Uplin",
-    role: "Frontend Developer (Prácticas)",
-    period: "Sep 2025 — Dic 2025",
+    role: "Frontend Developer",
+    period: "Sep 2025 — Dic 2025 (Prácticas)",
     current: false,
     description:
       "Componentes reutilizables con React y Next.js desde diseños en Figma. Integración con backend, deploy en Vercel y trabajo continuo con TypeScript.",
@@ -44,7 +44,7 @@ export default function Experience() {
           <br />
           <span className="text-accent">profesional.</span>
         </h2>
-        <span className="font-mono-custom text-[10px] tracking-[0.25em] uppercase text-accent">
+        <span className="font-mono-custom text-[12px] tracking-[0.25em] uppercase text-accent">
           {"//"} 03
         </span>
       </div>
@@ -58,8 +58,8 @@ export default function Experience() {
           >
             {/* Meta */}
             <div className="flex flex-row md:flex-col gap-2 md:gap-2">
-              <span className="text-[14px] text-[#888]">{job.company}</span>
-              <span className="font-mono-custom text-[10px] tracking-[0.08em] text-[#444]">
+              <span className="text-[14px] text-[#f0ece4]">{job.company}</span>
+              <span className="font-mono-custom text-[10px] tracking-[0.08em] text-[#838383]">
                 {job.period}
               </span>
             </div>
@@ -77,14 +77,14 @@ export default function Experience() {
                   </span>
                 )}
               </div>
-              <p className="text-[14px] leading-[1.7] text-[#666] max-w-[540px]">
+              <p className="text-[14px] leading-[1.7] text-[#b1b1b1] max-w-[540px]">
                 {job.description}
               </p>
               <div className="flex flex-wrap gap-2 mt-1">
                 {job.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono-custom text-[9px] tracking-widest uppercase px-2 py-1 bg-[#181818] border border-[#2a2a2a] text-[#666]"
+                    className="font-mono-custom text-[9px] tracking-widest uppercase px-2 py-1 bg-[#181818] border border-[#2a2a2a] text-[#b1b1b1]"
                   >
                     {tag}
                   </span>
@@ -99,7 +99,7 @@ export default function Experience() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Visitar ${job.company}`}
-                className="text-[18px] text-[#444] no-underline hover:text-accent transition-colors duration-200"
+                className="text-[35px] text-[#b1b1b1] no-underline hover:text-accent transition-colors duration-200"
               >
                 ↗
               </a>

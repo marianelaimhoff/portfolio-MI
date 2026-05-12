@@ -1,105 +1,97 @@
 import Image from "next/image";
+import { TECHS } from "@/components/TechStack/techs";
+
+const HIGHLIGHTED_TECHS = new Set(["React", "Next.js", "TypeScript", "Tailwind CSS"]);
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="grid grid-cols-1 md:grid-cols-2 border-b border-[#2a2a2a]"
+      className="grid grid-cols-1 md:grid-cols-[1.35fr_0.55fr_1.1fr] border-b border-[#2a2a2a]"
     >
-      {/* ── LEFT ──────────────────────────────────────── */}
-      <div className="flex flex-col px-6 md:px-10 py-16 border-b md:border-b-0 md:border-r border-[#2a2a2a]">
-        {/* Tag */}
-        <div className="anim-1 flex items-center gap-3 font-mono-custom text-[11px] tracking-[0.2em] uppercase text-[#666]">
-          <span className="w-6 h-px bg-accent shrink-0" />
-          Frontend Developer — Argentina
-        </div>
 
-        {/* Name */}
-        <div className="anim-2 mt-10">
-          <h1
-            className="flex flex-col font-bold leading-[0.9] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(3.5rem, 7vw, 6.5rem)" }}
-          >
-            Marianela
-            <span className="text-accent">Imhoff.</span>
-          </h1>
-        </div>
+      {/* ── COL 1: PRESENTACIÓN ── */}
+      <div className="grid grid-cols-1 md:col-span-2 md:grid-cols-[1.35fr_0.55fr] items-center gap-8 md:gap-6 px-6 md:px-10 py-12 md:py-10 border-b md:border-b-0 md:border-r border-[#2a2a2a]">
 
-        {/* Description */}
-        <p className="anim-3 mt-7 max-w-sm text-[15px] leading-[1.75] text-[#aaa]">
-          Diseño interfaces que combinan{" "}
-          <strong className="text-[#f0ece4] font-medium">
-            estética y funcionalidad
-          </strong>
-          . Especializada en Next.js, TypeScript y Tailwind CSS.
-        </p>
+        <div className="flex flex-col">
+          <div className="anim-1 flex items-center gap-3 font-mono-custom text-[14px] tracking-[0.2em] uppercase text-[#8f8982]">
+            <span className="w-6 h-px bg-accent shrink-0" />
+            Frontend Developer
+          </div>
 
-        {/* Actions */}
-        <div className="anim-4 flex flex-wrap items-center gap-4 mt-9">
-          <a
-            href="#proyectos"
-            className="bg-accent text-[#0a0a0a] px-8 py-3 text-[12px] font-bold tracking-widest uppercase no-underline hover:opacity-85 transition-opacity"
-          >
-            Ver proyectos
-          </a>
-          <a
-            href="#contacto"
-            className="border border-[#444] text-[#f0ece4] px-8 py-3 text-[12px] tracking-widest uppercase no-underline hover:border-[#888] transition-colors"
-          >
-            Hablemos
-          </a>
-        </div>
+          <div className="anim-2 mt-8">
+            <h1
+              className="flex flex-col font-bold leading-[0.9] tracking-[-0.03em]"
+              style={{ fontSize: 'clamp(2.8rem, 4.5vw, 5rem)' }}
+            >
+              Marianela
+              <span className="text-accent">Imhoff.</span>
+            </h1>
+          </div>
 
-        {/* Stats */}
-        <div className="anim-5 flex gap-10 mt-10 pt-8 border-t border-[#2a2a2a]">
-          {[
-            { num: "3+", label: "proyectos" },
-            { num: "2", label: "empresas" },
-            { num: "15+", label: "tecnologías" },
-          ].map(({ num, label }) => (
-            <div key={label} className="flex flex-col gap-1">
-              <span className="text-[2.25rem] font-bold leading-none text-accent">
-                {num}
-              </span>
-              <span className="font-mono-custom text-[11px] tracking-widest uppercase text-[#444]">
-                {label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
 
-      {/* ── RIGHT ─────────────────────────────────────── */}
-      <div className="relative flex items-center justify-center bg-[#111] min-h-[440px] md:min-h-0">
-        {/* Vertical label */}
-        <span
-          className="absolute top-8 right-6 font-mono-custom text-[10px] tracking-[0.2em] uppercase text-[#444]"
-          style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-        >
-          marianela imhoff — 2026
-        </span>
-
-        {/* Photo frame */}
-        <div className="relative mt-4">
-          {/* Offset accent border */}
-          <div className="absolute top-3 left-3 -right-3 -bottom-3 border border-accent pointer-events-none" />
-
-          <div className="relative w-[220px] h-[280px] border border-[#333] bg-[#181818] overflow-hidden flex items-center justify-center">
-            
-              <Image src="/marian-portfolio-lime.png" alt="Marianela Imhoff" fill style={{ objectFit: 'cover' }} />
-           
+          <div className="anim-4 flex flex-wrap items-center gap-4 mt-9">
+              <a href="#proyectos"
+              className="bg-accent text-[#0a0a0a] px-7 py-3 text-[12px] font-bold tracking-widest uppercase no-underline hover:opacity-85 transition-opacity">
+              Ver proyectos
+            </a>
+            <a
+              href="#contacto"
+              className="border border-[#444] text-[#f0ece4] px-7 py-3 text-[12px] tracking-widest uppercase no-underline hover:border-[#888] transition-colors"
+            >
+              Hablemos
+            </a>
           </div>
         </div>
 
-        {/* Badge */}
-        <div className="absolute bottom-10 right-8 bg-accent text-[#0a0a0a] px-4 py-3 font-mono-custom text-[10px] font-bold tracking-widest uppercase leading-[1.8] text-center">
-          Next.js
-          <br />
-          TypeScript
-          <br />
-          Tailwind CSS
+      {/* ── COL 2: FOTO ── */}
+      <div className="relative flex min-h-[260px] items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(198,255,0,0.08),_transparent_62%)]" />
+        <div className="relative w-full max-w-[230px] h-[280px] md:h-[360px]">
+          <Image
+            src="/marian-portfolio-lime.png"
+            alt="Marianela Imhoff"
+            fill
+            priority
+            className="object-contain object-center"
+          />
         </div>
       </div>
+
+      {/* ── COL 3: TECH STACK ── */}
+      </div>
+
+      <div className="flex flex-col justify-center px-6 md:px-10 py-12 md:py-10">
+
+        <span className="font-mono-custom text-[12px] tracking-[0.25em] uppercase text-accent mb-5">
+          {"//"} stack principal
+        </span>
+
+        <div className="flex flex-col">
+          {TECHS.slice(0, 7).map(({ name }, i) => {
+            const highlight = HIGHLIGHTED_TECHS.has(name);
+
+            return (
+            <div
+              key={name}
+              className="flex items-center justify-between py-2.5 border-b border-[#1e1e1e] group cursor-default"
+            >
+              <span className={`font-mono-custom text-[12px] tracking-[0.08em] uppercase transition-colors duration-200
+                ${highlight ? 'text-accent' : 'text-[#bbb5ad] group-hover:text-[#e4ded6]'}`}
+              >
+                {name}
+              </span>
+              <span className={`font-mono-custom text-[9px] transition-colors duration-200
+                ${highlight ? 'text-accent' : 'text-[#746d65] group-hover:text-[#9b948b]'}`}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </span>
+            </div>
+            );
+          })}
+        </div>
+      </div>
+
     </section>
-  );
+  )
 }
