@@ -6,17 +6,15 @@ import Hero from "@/components/Hero/Hero";
 import Marquee from "@/components/Marquee/Marquee";
 import Navbar from "@/components/Navbar/Navbar";
 import Projects from "@/components/Projects/MyProjects";
-import TechStack from "@/components/TechStack/TechStack";
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <Marquee />
       <AboutMe />
-      <TechStack />
-      <Experience />
       <Projects />
+      <Marquee />
+      <Experience />
       <Contact />
       <Footer />
     </main>

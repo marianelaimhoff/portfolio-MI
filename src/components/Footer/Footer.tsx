@@ -10,7 +10,7 @@ const FOOTER_LINKS = [
 export default function Footer() {
   return (
     <footer className="flex items-center justify-between px-6 md:px-10 py-5 border-t border-[#2a2a2a] bg-[#0a0a0a]">
-      <span className="font-mono-custom text-[10px] tracking-[0.15em] uppercase text-[#444]">
+      <span className="font-mono-custom text-[12px] tracking-[0.15em] uppercase text-[#b1b1b1]">
         © 2026 Marianela Imhoff
       </span>
 
@@ -21,7 +21,7 @@ export default function Footer() {
             href={href}
             target={href.startsWith("http") ? "_blank" : undefined}
             rel="noopener noreferrer"
-            className="font-mono-custom text-[10px] tracking-[0.15em] uppercase text-[#444] no-underline hover:text-accent transition-colors duration-200"
+            className="font-mono-custom text-[12px] tracking-[0.15em] uppercase text-[#b1b1b1] no-underline hover:text-accent transition-colors duration-200"
           >
             {label}
           </a>

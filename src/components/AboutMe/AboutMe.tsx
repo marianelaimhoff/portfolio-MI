@@ -1,16 +1,4 @@
-const STACK = [
-  { name: "Next.js", highlight: true },
-  { name: "TypeScript", highlight: true },
-  { name: "React", highlight: true },
-  { name: "Tailwind CSS", highlight: true },
-  { name: "Express", highlight: false },
-  { name: "PostgreSQL", highlight: false },
-  { name: "Figma", highlight: false },
-  { name: "Vercel", highlight: false },
-  { name: "Auth0", highlight: false },
-  { name: "Stripe", highlight: false },
-  { name: "GitHub", highlight: false },
-];
+import { TECHS } from "@/components/TechStack/techs";
 
 export default function AboutMe() {
   return (
@@ -20,15 +8,15 @@ export default function AboutMe() {
     >
       {/* ── LEFT ── */}
       <div className="flex flex-col gap-8 px-6 md:px-10 py-14 border-b md:border-b-0 md:border-r border-[#2a2a2a]">
-        <span className="font-mono-custom text-[10px] tracking-[0.25em] uppercase text-accent">
+        <span className="font-mono-custom text-[12px] tracking-[0.25em] uppercase text-accent">
           {"//"} 01 — sobre mí
         </span>
 
-        <blockquote className="mt-auto font-mono-custom text-[13px] italic text-[#666] leading-[1.7] border-l-2 border-accent pl-4">
+        <blockquote className="mt-auto font-mono-custom text-[13px] italic text-[#b1b1b1] leading-[1.7] border-l-2 border-accent pl-4">
           &quot;Construyo interfaces que la gente disfruta usar.&quot;
         </blockquote>
 
-        <div className="pt-6 border-t border-[#2a2a2a] flex flex-col gap-1 font-mono-custom text-[11px] tracking-widest uppercase text-[#444] leading-loose">
+        <div className="pt-6 border-t border-[#2a2a2a] flex flex-col gap-1 font-mono-custom text-[11px] tracking-widest uppercase text-[#b1b1b1] leading-loose">
           <p>Basada en Argentina</p>
           <p>Disponible para trabajo remoto</p>
           <p>Open to relocation</p>
@@ -55,18 +43,18 @@ export default function AboutMe() {
         </p>
 
         <div>
-          <p className="font-mono-custom text-[10px] tracking-[0.15em] uppercase text-[#444] mb-3">
-            Stack principal
+          <p className="font-mono-custom text-[10px] tracking-[0.15em] uppercase text-[#b1b1b1] mb-3">
+            Stack
           </p>
           <div className="flex flex-wrap gap-2">
-            {STACK.map(({ name, highlight }) => (
+            {TECHS.map(({ name, highlight }) => (
               <span
                 key={name}
                 className={`font-mono-custom text-[10px] tracking-widest uppercase px-3 py-[5px] border text-sm
                   ${
                     highlight
                       ? "border-accent text-accent"
-                      : "border-[#2a2a2a] text-[#666]"
+                      : "border-[#2a2a2a] text-[#b1b1b1]"
                   }`}
               >
                 {name}
