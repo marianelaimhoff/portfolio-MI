@@ -1,5 +1,21 @@
 const JOBS = [
   {
+    company: "NovaDev Studios",
+    role: "Frontend Developer",
+    period: "Ene 2026",
+    current: true,
+    description:
+      "Desarrollo de interfaces utilizando React, Next.js y TypeScript, contribuyendo a la creación de componentes reutilizables que optimizan los tiempos de trabajo del equipo. Además, el trabajo en conjunto con el área de Backend para la integración de distintos servicios, la mejora del rendimiento y la experiencia de usuario dentro de las aplicaciones.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Figma",
+      "GitHub",
+    ],
+    url: "https://novadevstudios.com",
+  },
+  {
     company: "Awaq ONG",
     role: "Frontend Developer",
     period: "Sep 2025 — Feb 2026 (Prácticas)",
@@ -26,6 +42,7 @@ const JOBS = [
     ],
     url: "https://uplinhr.com",
   },
+  
 ];
 
 export default function Experience() {
