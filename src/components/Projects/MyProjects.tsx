@@ -33,7 +33,7 @@ export default function Projects() {
             `}
           >
             <span className="font-mono-custom text-[10px] tracking-[0.15em] text-[#b1b1b1]">
-              {project.num} / 03
+              {project.num} / 02
             </span>
 
             {/* Image */}

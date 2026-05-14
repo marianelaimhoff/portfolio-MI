@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
-const CV_HREF = "/MarianelaImhoff-CV-FrontEnd .pdf";
+const CV_HREF = "/MarianelaImhoff-CV-FrontEnd.pdf";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
